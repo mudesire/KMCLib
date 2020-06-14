@@ -33,7 +33,7 @@ make install
 
 # Modify ~/.bashrc and add 
 
-# copy et coller a la fin
+# Copy 
 export PYTHONPATH=${KMCLIB_PATH}/python/src:${PYTHONPATH}
 
 # Test install 
