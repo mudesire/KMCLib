@@ -7,6 +7,23 @@
 cmake_minimum_required(VERSION 2.8)
 project(KMCLib)
 
+# added by desire
+set(PYTHON27 "/usr/include/python2.7")
+include_directories(${PYTHON27})
+macro(use_cxx11)
+  if (CMAKE_VERSION VERSION_LESS "3.1")
+    if (CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+      set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=gnu++11")
+    endif ()
+  else ()
+    set (CMAKE_CXX_STANDARD 11)
+  endif ()
+endmacro(use_cxx11)
+
+# end added by desire
+
+
+
 # -----------------------------------------------------------------------------
 # CHECK IF USING MPI OR NOT
 # -----------------------------------------------------------------------------
@@ -103,9 +120,8 @@ else()
 endif()
 
 # Includsion from the source.
-include_directories( ${KMCLib_SOURCE_DIR}/src )
-include_directories( ${KMCLib_SOURCE_DIR}/externals/include )
-
+include_directories( "${KMCLib_SOURCE_DIR}/src" 
+              "${KMCLib_SOURCE_DIR}/externals/include")
 
 # -----------------------------------------------------------------------------
 # ADD THE SRC TARGET
@@ -130,6 +146,13 @@ add_subdirectory(unittest)
 # -----------------------------------------------------------------------------
 
 add_subdirectory(wrap)
+
+# -----------------------------------------------------------------------------
+# ADD THE EXTERNALS
+# -----------------------------------------------------------------------------
+
+add_subdirectory(externals/include)
+
 
 # -----------------------------------------------------------------------------
 # ADD THE INSTALL TARGET

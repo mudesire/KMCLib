@@ -1,6 +1,8 @@
 # 
 #   Simple installer for unix 
-#    tested on ubuntu-Wsl
+#         tested on ubuntu-Wsl
+#   Created Muhire Desire 
+#   Licence MIT
 #  Essential tools
 sudo apt-get update -y
 sudo apt-get install gedit  -y
@@ -8,13 +10,12 @@ sudo apt-get install build-essential -y
 sudo apt-get install swig -y
 sudo apt-get install python-dev -y
 
-#  Make sure Python if in this path
+#  Make sure Python 2.7 is in this path
 
 PYTHON27="/usr/include/python2.7"
+
 KMCLIB_PATH = pwd
-
-BUILDPATH = ${KMCLIB_PATH}/build
-
+BUILDPATH = ${KMCLIB_PATH}/c++/build
 EXTERNALS = ${KMCLIB_PATH}/c++/externals
 cd ${EXTERNALS} 
 make

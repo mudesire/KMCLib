@@ -369,6 +369,3 @@ std::vector<double> Coordinate::data() const
 
 
 #endif // __COORDINATE__
-
-
-

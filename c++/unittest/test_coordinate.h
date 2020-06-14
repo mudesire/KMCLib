@@ -11,6 +11,7 @@
 
 #include <iostream>
 #include <string>
+#include <cstddef>
 
 #include <cppunit/TestCase.h>
 #include <cppunit/TestSuite.h>
@@ -20,6 +21,8 @@
 #include <cppunit/extensions/HelperMacros.h>
 
 class Test_Coordinate : public CppUnit::TestCase {
+    
+
 
 public:
 
@@ -35,6 +38,7 @@ public:
     CPPUNIT_TEST( testOuterProdDiag );
     CPPUNIT_TEST( testDotProduct );
     CPPUNIT_TEST_SUITE_END();
+ 
 
     void testConstructionAndQuery();
     void testLessOperator();
@@ -46,8 +50,8 @@ public:
     void testAccessOperator();
     void testOuterProdDiag();
     void testDotProduct();
-
+    
 };
-
+//Test_Coordinate::Test_Coordinate();
+//Test_Coordinate::~Test_Coordinate();
 #endif
-

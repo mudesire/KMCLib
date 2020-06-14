@@ -143,7 +143,7 @@ void Test_Interactions::testQuery()
 
     // Query for the rate calculator.
     const RateCalculator & rc = interactions.rateCalculator();
-    CPPUNIT_ASSERT( &rc != NULL );
+    CPPUNIT_ASSERT( (&rc) != NULL );
 
 }
 

@@ -16,7 +16,7 @@
 #include "process.h"
 #include "configuration.h"
 #include "matchlist.h"
-#include "externals/md5.h"
+#include <externals/md5.h>
 
 #include <cstdio>
 #include <cstring>
